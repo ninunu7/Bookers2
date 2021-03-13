@@ -26,16 +26,23 @@
           <i class="fas fa-home"><%= link_to 'Home', user_path(current_user.id) %></i>
         </li>
         <li>
-          <i class="fas fa-link"><%= link_to 'Users', user_path(current_user.id) %></i>
+          <i class="fas fa-link"><%= link_to 'Users', users_path %></i>
         </li>
         <li>
-          <i class="fas fa-user-plus"><%= link_to 'Books', user_path(current_user.id) %></i>
+          <i class="fas fa-user-plus"><%= link_to 'Books', books_path %></i>
         </li>
         <li>
           <i class="fas fa-sign-in-alt"><%= link_to "logout", destroy_user_session_path, method: :delete %></i>
         </li>
 
         <% else %>
+        <li>
+          <i class="fas fa-user-plus"><%= link_to "Home", root_path %></i>
+        </li>
+        <li>
+          <i class="fas fa-user-plus"><%= link_to "About", home_about_path %></i>
+        </li>
+
         <li>
           <i class="fas fa-user-plus"><%= link_to "sign up", new_user_registration_path %></i>
         </li>
