@@ -1,11 +1,16 @@
 <body>
 <div class="row">
   <div class="col-lg-6 offset-lg-3">
-    <h1>welcome to <i class="fas fa-book"></i>Bookers !!</h1>
-    <p>In <i class="fas fa-book"></i>Bookers,<br>
-      you can share and exchange your opinions , inpressions , and emotions<br>
-      about various books!</p>
-
+    <h1 class="pt-3">welcome to <b><i class="fas fa-book"></i>Bookers</b> !!</h1>
+      <p class="pt-1">In <b><i class="fas fa-book"></i>Bookers</b>,</p>
+      <p class="pt-1">you can share and exchange your opinions , inpressions , and emotions</p>
+      <p class="pt-1">about various books!</p>
+    <div class="center-block pb-3 col-lg-8 offset-lg-2">
+      <%= link_to 'Log in', new_user_session_path, class: "btn btn-info mx-auto d-block btn-sm" %>
+    </div>
+    <div class="center-block pb-3 col-lg-8 offset-lg-2">
+      <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-success mx-auto d-block btn-sm" %>
+    </div>
   </div>
 </div>
 </body>
