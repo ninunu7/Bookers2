@@ -15,7 +15,7 @@
   <header class="bg-dark text-white">
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
-        <a class="navbar-brand p-1" href="/">Bookers</a>
+        <a class="navbar-brand p-1 text-white" href="/">Bookers</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,31 +23,30 @@
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
         <li>
-          <i class="fas fa-home"><%= link_to 'Home', user_path(current_user.id) %></i>
+          <i class="fas fa-home"><%= link_to 'Home', user_path(current_user.id),class:'text-white' %></i>
         </li>
         <li>
-          <i class="fas fa-users"><%= link_to 'Users', users_path %></i>
+          <i class="fas fa-users pl-3"><%= link_to 'Users', users_path,class:'text-white' %></i>
         </li>
         <li>
-          <i class="fas fa-book-open"><%= link_to 'Books', books_path %></i>
+          <i class="fas fa-book-open pl-3"><%= link_to 'Books', books_path,class:'text-white' %></i>
         </li>
         <li>
-          <i class="fas fa-sign-in-alt"><%= link_to "logout", destroy_user_session_path, method: :delete %></i>
+          <i class="fas fa-sign-in-alt pl-3"><%= link_to "logout", destroy_user_session_path,class:'text-white', method: :delete %></i>
         </li>
 
         <% else %>
         <li>
-          <i class="fas fa-home"><%= link_to "Home", root_path %></i>
+          <i class="fas fa-home text-white"><%= link_to "Home", root_path,class:'text-white' %></i>
         </li>
         <li>
-          <i class="fas fa-link"><%= link_to "About", home_about_path %></i>
-        </li>
-
-        <li>
-          <i class="fas fa-user-plus"><%= link_to "sign up", new_user_registration_path %></i>
+          <i class="fas fa-link pl-3"><%= link_to "About", home_about_path,class:'text-white' %></i>
         </li>
         <li>
-          <i class="fas fa-sign-in-alt"><%= link_to "login", new_user_session_path %></i>
+          <i class="fas fa-user-plus pl-3"><%= link_to "sign up", new_user_registration_path,class:'text-white' %></i>
+        </li>
+        <li>
+          <i class="fas fa-sign-in-alt pl-3"><%= link_to "login", new_user_session_path,class:'text-white' %></i>
         </li>
         <% end %>
       </ul>
