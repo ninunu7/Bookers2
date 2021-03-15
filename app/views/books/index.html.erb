@@ -1,30 +1,14 @@
 <div class="container">  <!-- この行を追加 -->
+ <div class="container">
   <div class="row">
     <div class="col-lg-3">
-      <h1>User info</h1>
-      <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
-      <p>name：<%= @user.name %></p>
-      <p>introduction：<%= @user.introduction %></p>
-
-      <div><%= link_to '' , edit_user_path(@user.id), class: "fas fa-user-cog btn btn-outline-secondary mx-auto d-block btn-sm" %></div>
-
-      <h1>New book</h1>
-      <!-- form_with部分 -->
-      <%= form_with model:@book, local:true do |f| %>
-        <p>Title</p>
-        <%= f.text_field :title %>
-        <p>Opinion</p>
-        <%= f.text_area :body %>
-        <%= f.submit 'Create Book', class: "btn btn-success mx-auto d-block" %>
-      <% end %>
+       <%= render 'users/user', user: @user,book: @book %>
     </div>
-
-    <div class="col-lg-8">  <!-- この行を追加 -->
+    <div class="col-lg-8 offset-lg-1">  <!-- この行を追加 -->
       <table class="table table-striped">
         <h1>Book detail</h1>
         <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
         <%= link_to @user.name, user_path(@user.id) %>
-
       </table>
     </div>
   </div> <!-- この行を追加 -->

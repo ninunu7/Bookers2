@@ -8,9 +8,7 @@
             <div class="d-flex flex-column">
               <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
             </div>
-            <div class="d-flex flex-column">
-              <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-            </div>
+
             <label for="inputImage">Image</label>
             <div class="d-flex flex-column">
               <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
