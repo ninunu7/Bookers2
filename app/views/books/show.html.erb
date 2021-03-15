@@ -4,14 +4,19 @@
       <%= render 'users/user', user: @user,book: @book %>
     </div>
     <div class="col-lg-8 offset-lg-1">  <!-- この行を追加 -->
-        <table class="table table-striped">
-          <h1 class="border-bottom">Book detail</h1>
-          <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
-          <%= link_to @user.name, user_path(@user.id) %>
-          <%= link_to @book.title, user_path(@user.id) %>
-          <%= link_to @book.body, user_path(@user.id) %>
-          <%= link_to 'Edit', edit_book_path(@book.id) ,class: "btn btn-success btn-sm" %>
-          <%= link_to 'Destroy', books_path, class: "btn btn-danger btn-sm"  %>
+
+          <h1>Book detail</h1>
+          <table class="table">
+          <tbody>
+            <tr>
+              <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
+              <td><%= link_to @user.name, user_path(@user.id) %></td>
+              <td><%= link_to @book.title, user_path(@user.id) %></td>
+              <td><%= link_to @book.body, user_path(@user.id) %></td>
+              <td><%= link_to 'Edit', edit_book_path(@book.id) ,class: "btn btn-success btn-sm" %></td>
+              <td><%= link_to 'Destroy', books_path, class: "btn btn-danger btn-sm"  %></td>
+            </tr>
+         </tbody>
         </table>
     </div>
   </div>
