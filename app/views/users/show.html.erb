@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
-      <%= render 'users/user', user: @user,book: @book %>
+      <%= render 'users/user', user: @user,book: @book_new %>
     </div>
     <div class="col-lg-8 offset-lg-1">
       <h1>Books</h1>  <!-- この行を追加 -->
       <table class="table">
         <thead>
           <tr>
+            <th></th>
             <th>Title</th>
             <th>Opinion</th>
           </tr>
