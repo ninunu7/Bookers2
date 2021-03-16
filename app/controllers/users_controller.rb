@@ -12,10 +12,11 @@ def new
 end
 
 def create
-
   @book = Book.new(book_params)
   @book.save
-  redirect_to books_path(@book.id)
+  if log_in user
+    redirect_to books_path(@book.id)
+  end
 end
 
 
@@ -33,10 +34,18 @@ end
 def update
   @user= User.find(params[:id])
   @user.update(user_params)
-  redirect_to user_path(@user.id)
+
+  if @user.update(user_params)
+      flash[:success] = "You have updated user successfully."
+      redirect_to user_path(@user.id)
+  end
 end
 
 def destroy
+  def destroy
+    log_out if logged_in?
+    redirect_to root_url
+  end
 end
 
  private
