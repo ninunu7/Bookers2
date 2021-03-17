@@ -1,14 +1,13 @@
-
-  <!-- この行を追加 -->
+<!-- この行を追加 -->
     <% flash.each do |message_type, message| %>
       <%= message %>
     <% end %>
     <div class="">
       <h1>User info</h1>
       <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
-      <p class="border-top mt-2 p-2">name：<%= user.name %></p>
-      <p class="border-top mt-2 p-2">introduction：<%= user.introduction %></p>
-      <% if current_user.id == user.id %>
+      <p class="border-top mt-2 p-2">name：<%= current_user.name %></p>
+      <p class="border-top mt-2 p-2">introduction：<%= current_user.introduction %></p>
+      <% if current_user %>
       <div><%= link_to '' , edit_user_path(current_user.id), class: "fas fa-user-cog btn btn-outline-secondary mx-auto d-block btn-sm" %></div>
       <% end %>
 

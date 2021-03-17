@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
 
 def index
   @user= current_user
@@ -6,22 +7,11 @@ def index
   @book = Book.new
 end
 
-def new
-    # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する。
-    @book = Book.new
-end
-
-def create
-  @book = Book.new(book_params)
-  @book.save
-  if log_in user
-    redirect_to books_path(@book.id)
-  end
-end
-
-
 def edit
   @user= User.find(params[:id])
+  if current_user != @user
+      redirect_to user_path(@user.id)
+  end
 end
 
 def show
