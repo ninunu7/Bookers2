@@ -1,6 +1,15 @@
 <div class="container">  <!-- この行を追加 -->
   <div class="row">
     <div class="col-lg-7 offset-lg-3">
+<% if @book.errors.any? %>
+        <div class="text-danger"><%= @book.errors.count %>errors prohibited this book from being saved:
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+      <% end %>
       <h1 class="mt-3">Editing Book</h1>
       <%= form_with model:@book, local:true do |f| %>
           <p class="mb-1">Title</p>

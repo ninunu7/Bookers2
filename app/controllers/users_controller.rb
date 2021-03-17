@@ -33,11 +33,11 @@ end
 
 def update
   @user= User.find(params[:id])
-  @user.update(user_params)
-
   if @user.update(user_params)
       flash[:success] = "You have updated user successfully."
       redirect_to user_path(@user.id)
+  else
+      render 'users/edit'
   end
 end
 
@@ -50,7 +50,7 @@ end
 
  private
   def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image, :title, :body)
+    params.require(:user).permit(:name, :introduction, :profile_image)
   end
 
 end
