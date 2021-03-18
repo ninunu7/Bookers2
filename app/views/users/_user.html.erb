@@ -8,9 +8,7 @@
       <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
       <p class="border-top mt-2 p-2">name：<%= user.name %></p>
       <p class="border-top mt-2 p-2">introduction：<%= user.introduction %></p>
-
-      <div><%= link_to '' , edit_user_path(current_user.id), class: "fas fa-user-cog btn btn-outline-secondary mx-auto d-block btn-sm" %></div>
-
+      <div><%= link_to '' , edit_user_path(@user.id), class: "fas fa-user-cog btn btn-outline-secondary mx-auto d-block btn-sm" %></div>
 
       <h1 class="pt-3">New book</h1>
       <!-- form_with部分 -->
