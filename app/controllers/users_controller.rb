@@ -8,9 +8,13 @@ def index
 end
 
 def edit
+  @book = Book.find(params[:id])
+  @book_new = Book.new
   @user= User.find(params[:id])
   if current_user != @user
-      redirect_to user_path(@user.id)
+    redirect_to edit_user_path(@user.id)
+  else
+    render "users/show"
   end
 end
 

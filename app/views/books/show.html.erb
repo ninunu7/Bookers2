@@ -9,8 +9,7 @@
           <table class="table">
           <tbody>
             <tr>
-              <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
-              <td><%= link_to @user.name, user_path(@user.id) %></td>
+              <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %><%= link_to @user.name, user_path(@user.id) %></td>
               <td><%= link_to @book.title, book_path(@book.id) %></td>
               <td><%= @book.body %></td>
               <% if current_user.id == @user.id %>
