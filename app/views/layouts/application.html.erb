@@ -32,7 +32,7 @@
           <i class="fas fa-book-open pl-3"><%= link_to 'Books', books_path,class:'text-white' %></i>
         </li>
         <li>
-          <i class="fas fa-sign-in-alt pl-3"><%= link_to "logout", destroy_user_session_path,class:'text-white', method: :delete %></i>
+          <i class="fas fa-sign-out-alt pl-3"><%= link_to "logout", destroy_user_session_path,class:'text-white', method: :delete %></i>
         </li>
 
         <% else %>
